@@ -1,7 +1,8 @@
 # Uses python3
 import sys
 
-def get_fibonacci_last_digit_naive(n):
+
+def get_fibonacci_last_digit_naive(n: int) -> int:
     if n <= 1:
         return n
 
@@ -12,6 +13,7 @@ def get_fibonacci_last_digit_naive(n):
         previous, current = current, previous + current
 
     return current % 10
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()

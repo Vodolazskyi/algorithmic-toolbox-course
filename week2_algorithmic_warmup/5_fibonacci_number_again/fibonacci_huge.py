@@ -1,7 +1,8 @@
 # Uses python3
 import sys
 
-def get_fibonacci_huge_naive(n, m):
+
+def get_fibonacci_huge_naive(n: int, m: int) -> int:
     if n <= 1:
         return n
 
@@ -13,7 +14,8 @@ def get_fibonacci_huge_naive(n, m):
 
     return current % m
 
+
 if __name__ == '__main__':
-    input = sys.stdin.read();
+    input = sys.stdin.read()
     n, m = map(int, input.split())
     print(get_fibonacci_huge_naive(n, m))
