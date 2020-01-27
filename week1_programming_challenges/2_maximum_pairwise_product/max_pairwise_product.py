@@ -3,13 +3,8 @@ from typing import List
 
 
 def max_pairwise_product(numbers: List[int]) -> int:
-    n = len(numbers)
-    max_product = 0
-    for first in range(n):
-        for second in range(first + 1, n):
-            max_product = max(max_product, numbers[first] * numbers[second])
-
-    return max_product
+    sorted_numbers = sorted(numbers)
+    return sorted_numbers[-1] * sorted_numbers[-2]
 
 
 if __name__ == '__main__':
