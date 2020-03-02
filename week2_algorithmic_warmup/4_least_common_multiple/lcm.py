@@ -10,7 +10,20 @@ def lcm_naive(a: int, b: int) -> int:
     return a * b
 
 
+def gcd(a: int, b: int) -> int:
+    if min(a, b) == 0:
+        return max(a, b)
+    if a < b:
+        return gcd(a, b % a)
+    else:
+        return gcd(b, a % b)
+
+
+def lcm(a: int, b: int) -> int:
+    return int(a * b / gcd(a, b))
+
+
 if __name__ == '__main__':
     input = sys.stdin.read()
     a, b = map(int, input.split())
-    print(lcm_naive(a, b))
+    print(lcm(a, b))

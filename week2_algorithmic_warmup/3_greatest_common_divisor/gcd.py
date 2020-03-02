@@ -12,7 +12,16 @@ def gcd_naive(a: int, b: int) -> int:
     return current_gcd
 
 
+def gcd(a: int, b: int) -> int:
+    if min(a, b) == 0:
+        return max(a, b)
+    if a < b:
+        return gcd(a, b % a)
+    else:
+        return gcd(b, a % b)
+
+
 if __name__ == "__main__":
     input = sys.stdin.read()
     a, b = map(int, input.split())
-    print(gcd_naive(a, b))
+    print(gcd(a, b))
