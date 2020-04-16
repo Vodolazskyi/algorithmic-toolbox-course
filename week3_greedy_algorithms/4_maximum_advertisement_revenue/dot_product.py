@@ -1,13 +1,17 @@
-#Uses python3
+# Uses python3
 
 import sys
+from typing import List
 
-def max_dot_product(a, b):
-    #write your code here
+
+def max_dot_product(a: List[int], b: List[int]) -> int:
+    # write your code here
     res = 0
-    for i in range(len(a)):
-        res += a[i] * b[i]
+    for profit, clicks in zip(sorted(a, reverse=True),
+                              sorted(b, reverse=True)):
+        res += profit * clicks
     return res
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()
@@ -16,4 +20,3 @@ if __name__ == '__main__':
     a = data[1:(n + 1)]
     b = data[(n + 1):]
     print(max_dot_product(a, b))
-    
